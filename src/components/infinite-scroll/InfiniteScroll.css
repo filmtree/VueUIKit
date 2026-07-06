@@ -1,0 +1,72 @@
+.infinite-scroll {
+    width: 100%;
+  }
+  
+  .infinite-scroll__content {
+    width: 100%;
+  }
+  
+  .infinite-scroll__target {
+    width: 100%;
+    height: 1px;
+  }
+  
+  .infinite-scroll__loading,
+  .infinite-scroll__empty,
+  .infinite-scroll__error,
+  .infinite-scroll__end {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    min-height: 56px;
+    padding: 16px;
+  
+    box-sizing: border-box;
+  
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: center;
+  }
+  
+  .infinite-scroll__loading {
+    gap: 8px;
+    color: #4b5563;
+  }
+  
+  .infinite-scroll__empty {
+    color: #6b7280;
+  }
+  
+  .infinite-scroll__error {
+    color: #dc2626;
+  }
+  
+  .infinite-scroll__end {
+    color: #9ca3af;
+  }
+  
+  .infinite-scroll__spinner {
+    width: 16px;
+    height: 16px;
+  
+    flex: 0 0 auto;
+  
+    border: 2px solid #e5e7eb;
+    border-top-color: #6b7280;
+    border-radius: 999px;
+  
+    animation: infinite-scroll-spin 0.8s linear infinite;
+  }
+  
+  @keyframes infinite-scroll-spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .infinite-scroll__spinner {
+      animation: none;
+    }
+  }

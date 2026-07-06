@@ -1,0 +1,135 @@
+/* components/accordion/Accordion.css */
+
+.accordion {
+    width: 100%;
+    border-top: 1px solid #e5e7eb;
+  }
+  
+  /* 하나의 아이템 */
+  .accordion__item {
+    border-bottom: 1px solid #e5e7eb;
+  }
+  
+  /* 비활성 아이템 */
+  .accordion__item--disabled {
+    opacity: 0.5;
+  }
+  
+  /* 제목 버튼 */
+  .accordion__trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    width: 100%;
+    min-height: 56px;
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    color: #111827;
+    font-size: 15px;
+    font-weight: 700;
+    text-align: left;
+    cursor: pointer;
+  }
+  
+  /* hover 상태 */
+  .accordion__trigger:hover {
+    color: #2563eb;
+  }
+  
+  /* disabled 상태 */
+  .accordion__trigger:disabled {
+    cursor: not-allowed;
+  }
+  
+  /* 키보드 접근성 */
+  .accordion__trigger:focus-visible {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+  
+  /* 제목 텍스트 */
+  .accordion__title {
+    flex: 1;
+  }
+  
+  /* 오른쪽 아이콘 */
+  .accordion__icon {
+    display: inline-flex;
+    /* align-items: center; */
+    justify-content: center;
+    flex: 0 0 auto;
+    line-height: 12px;
+    width: 24px;
+    height: 24px;
+    color: #6b7280;
+    transition: transform 0.2s ease;
+  }
+  
+  /* 열렸을 때 아이콘 회전 */
+  .accordion__item--open .accordion__icon {
+    transform: rotate(180deg);
+  }
+  
+  /**
+   * 내용 영역
+   *
+   * height 값은 컴포넌트에서 scrollHeight로 계산해서 넣습니다.
+   * 그래서 내용 높이가 제각각이어도 고정값 없이 자연스럽게 열고 닫힙니다.
+   */
+  .accordion__content {
+    height: 0;
+    overflow: hidden;
+    color: #4b5563;
+    transition: height 0.24s ease;
+    will-change: height;
+  }
+  
+  /**
+   * 실제 콘텐츠 내부
+   *
+   * padding은 inner에 둡니다.
+   * 바깥 content는 height: 0으로 완전히 접히고 overflow hidden이기 때문에
+   * 닫힌 상태에서 내용이 한 줄 보이지 않습니다.
+   */
+  .accordion__content-inner {
+    padding: 0 0 20px;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  
+  /**
+   * 카드형 Accordion 스타일이 필요할 때 사용할 수 있는 확장 클래스입니다.
+   */
+  .accordion--card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    border-top: 0;
+  }
+  
+  .accordion--card .accordion__item {
+    overflow: hidden;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    background-color: #fff;
+  }
+  
+  .accordion--card .accordion__trigger {
+    min-height: 60px;
+    padding: 0 18px;
+  }
+  
+  .accordion--card .accordion__content-inner {
+    padding: 0 18px 18px;
+  }
+  
+  /* 모션 감소 설정 대응 */
+  @media (prefers-reduced-motion: reduce) {
+    .accordion__content,
+    .accordion__icon {
+      transition: none;
+    }
+  }

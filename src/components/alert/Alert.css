@@ -1,0 +1,98 @@
+.alert {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  
+    width: 100%;
+    padding: 14px 16px;
+  
+    border: 1px solid transparent;
+    border-radius: 8px;
+  
+    font-size: 14px;
+    line-height: 1.5;
+  
+    box-sizing: border-box;
+  }
+  
+  /* 아이콘 영역 */
+  .alert__icon {
+    flex: 0 0 auto;
+    font-size: 18px;
+    line-height: 1;
+    margin-top: 1px;
+  }
+  
+  /* 텍스트 영역 */
+  .alert__content {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+  
+  /* 제목 */
+  .alert__title {
+    display: block;
+    margin-bottom: 4px;
+    font-weight: 700;
+  }
+  
+  /* 본문 */
+  .alert__message {
+    color: inherit;
+  }
+  
+  /* 닫기 버튼 */
+  .alert__close {
+    flex: 0 0 auto;
+  
+    width: 24px;
+    height: 24px;
+  
+    border: 0;
+    background: transparent;
+    color: inherit;
+  
+    font-size: 20px;
+    line-height: 1;
+  
+    cursor: pointer;
+  }
+  
+  /* 닫기 버튼 hover 상태 */
+  .alert__close:hover {
+    opacity: 0.7;
+  }
+  
+  /* 닫기 버튼 키보드 접근성 */
+  .alert__close:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+  }
+  
+  /* 성공 */
+  .alert--success {
+    color: #065f46;
+    background-color: #ecfdf5;
+    border-color: #a7f3d0;
+  }
+  
+  /* 오류 */
+  .alert--error {
+    color: #991b1b;
+    background-color: #fef2f2;
+    border-color: #fecaca;
+  }
+  
+  /* 경고 */
+  .alert--warning {
+    color: #92400e;
+    background-color: #fffbeb;
+    border-color: #fde68a;
+  }
+  
+  /* 정보 */
+  .alert--info {
+    color: #1e40af;
+    background-color: #eff6ff;
+    border-color: #bfdbfe;
+  }

@@ -1,0 +1,43 @@
+.ui-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  
+    flex: 0 0 auto;
+  
+    line-height: 0;
+    vertical-align: middle;
+  }
+  
+  .ui-icon svg {
+    display: block;
+  
+    width: 100%;
+    height: 100%;
+  }
+  
+  /*
+    fill을 강제로 전체 적용하지 않습니다.
+  
+    이전 코드처럼 아래처럼 쓰면 안 됩니다.
+  
+    .ui-icon svg {
+      fill: currentColor;
+    }
+  
+    이 코드는 fill="none"으로 만든 체크 아이콘까지 채워버릴 수 있습니다.
+  */
+  
+  /*
+    fill="currentColor"로 명시된 요소만 currentColor를 따르게 합니다.
+  */
+  .ui-icon svg [fill="currentColor"] {
+    fill: currentColor;
+  }
+  
+  /*
+    stroke="currentColor"로 명시된 요소만 currentColor를 따르게 합니다.
+  */
+  .ui-icon svg [stroke="currentColor"] {
+    stroke: currentColor;
+  }

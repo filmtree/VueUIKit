@@ -1,0 +1,228 @@
+.tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+  
+    max-width: 100%;
+    box-sizing: border-box;
+  
+    border: 1px solid transparent;
+  
+    font-weight: 500;
+    line-height: 1;
+    white-space: nowrap;
+    vertical-align: middle;
+  
+    transition:
+      color 0.2s ease,
+      background-color 0.2s ease,
+      border-color 0.2s ease,
+      opacity 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+  
+  /* =========================
+     size
+  ========================= */
+  
+  .tag--sm {
+    min-height: 24px;
+    padding: 0 8px;
+    font-size: 12px;
+  }
+  
+  .tag--md {
+    min-height: 28px;
+    padding: 0 10px;
+    font-size: 13px;
+  }
+  
+  .tag--lg {
+    min-height: 34px;
+    padding: 0 12px;
+    font-size: 14px;
+  }
+  
+  /* =========================
+     shape
+  ========================= */
+  
+  .tag--rounded {
+    border-radius: 6px;
+  }
+  
+  .tag--pill {
+    border-radius: 999px;
+  }
+  
+  .tag--square {
+    border-radius: 3px;
+  }
+  
+  /* =========================
+     color
+  ========================= */
+  
+  .tag--gray {
+    color: #374151;
+    background: #f9fafb;
+    border-color: #e5e7eb;
+  }
+  
+  .tag--blue {
+    color: #1d4ed8;
+    background: #eff6ff;
+    border-color: #bfdbfe;
+  }
+  
+  .tag--green {
+    color: #047857;
+    background: #ecfdf5;
+    border-color: #a7f3d0;
+  }
+  
+  .tag--red {
+    color: #b91c1c;
+    background: #fef2f2;
+    border-color: #fecaca;
+  }
+  
+  .tag--yellow {
+    color: #92400e;
+    background: #fffbeb;
+    border-color: #fde68a;
+  }
+  
+  .tag--purple {
+    color: #6d28d9;
+    background: #f5f3ff;
+    border-color: #ddd6fe;
+  }
+  
+  /* =========================
+     selected
+  ========================= */
+  
+  .tag--selected.tag--gray {
+    color: #ffffff;
+    background: #374151;
+    border-color: #374151;
+  }
+  
+  .tag--selected.tag--blue {
+    color: #ffffff;
+    background: #2563eb;
+    border-color: #2563eb;
+  }
+  
+  .tag--selected.tag--green {
+    color: #ffffff;
+    background: #059669;
+    border-color: #059669;
+  }
+  
+  .tag--selected.tag--red {
+    color: #ffffff;
+    background: #dc2626;
+    border-color: #dc2626;
+  }
+  
+  .tag--selected.tag--yellow {
+    color: #ffffff;
+    background: #d97706;
+    border-color: #d97706;
+  }
+  
+  .tag--selected.tag--purple {
+    color: #ffffff;
+    background: #7c3aed;
+    border-color: #7c3aed;
+  }
+  
+  /* =========================
+     inner
+  ========================= */
+  
+  .tag__text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .tag__prefix,
+  .tag__suffix {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  
+    flex: 0 0 auto;
+    line-height: 1;
+  }
+  
+  /* =========================
+     removable
+  ========================= */
+  
+  .tag--removable {
+    padding-right: 4px;
+  }
+  
+  .tag__remove {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  
+    width: 18px;
+    height: 18px;
+  
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+  
+    background: transparent;
+    color: currentColor;
+  
+    font-size: 14px;
+    line-height: 1;
+  
+    cursor: pointer;
+  }
+  
+  .tag__remove:hover {
+    background: rgba(0, 0, 0, 0.08);
+  }
+  
+  .tag__remove:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 1px;
+  }
+  
+  /* =========================
+     clickable
+  ========================= */
+  
+  .tag--clickable {
+    cursor: pointer;
+  }
+  
+  .tag--clickable:hover {
+    opacity: 0.85;
+  }
+  
+  .tag--clickable:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+  }
+  
+  /* =========================
+     disabled
+  ========================= */
+  
+  .tag--disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  .tag--disabled .tag__remove {
+    cursor: not-allowed;
+  }

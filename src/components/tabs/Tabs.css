@@ -1,0 +1,92 @@
+.tabs {
+    width: 100%;
+  }
+  
+  /* 탭 버튼 리스트 */
+  .tabs__list {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  
+  /* 탭 버튼 */
+  .tabs__trigger {
+    position: relative;
+    min-height: 44px;
+    padding: 0 16px;
+    border: 0;
+    border-bottom: 2px solid transparent;
+    background-color: transparent;
+    color: #6b7280;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
+  /* hover 상태 */
+  .tabs__trigger:hover {
+    color: #111827;
+  }
+  
+  /* 선택된 탭 */
+  .tabs__trigger--active {
+    border-bottom-color: #2563eb;
+    color: #2563eb;
+  }
+  
+  /* 키보드 접근성 */
+  .tabs__trigger:focus-visible {
+    z-index: 1;
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+  
+  /* 비활성 탭 */
+  .tabs__trigger:disabled {
+    color: #c4c4c4;
+    cursor: not-allowed;
+  }
+  
+  /* 패널 영역 */
+  .tabs__panel {
+    padding: 20px 0;
+    animation: tabs-fade-in 0.18s ease-out;
+  }
+  
+  /* 활성 패널 */
+  .tabs__panel--active {
+    display: block;
+  }
+  
+  @keyframes tabs-fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(4px);
+    }
+  
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* 카드형 Tabs */
+  .tabs--card .tabs__list {
+    gap: 8px;
+    border-bottom: 0;
+  }
+  
+  .tabs--card .tabs__trigger {
+    min-height: 38px;
+    border: 1px solid #e5e7eb;
+    border-radius: 9999px;
+    background-color: #fff;
+  }
+  
+  .tabs--card .tabs__trigger--active {
+    border-color: #2563eb;
+    background-color: #eff6ff;
+    color: #2563eb;
+  }

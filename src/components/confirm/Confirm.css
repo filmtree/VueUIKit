@@ -1,0 +1,103 @@
+.confirm {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+  }
+  
+  /* 배경 dim */
+  .confirm__dim {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+  }
+  
+  /* 모달 박스 */
+  .confirm__dialog {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  
+    width: calc(100% - 32px);
+    max-width: 400px;
+  
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+  }
+  
+  /* 내용 영역 */
+  .confirm__body {
+    padding: 24px 24px 16px;
+  }
+  
+  /* 제목 */
+  .confirm__title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: #111827;
+  }
+  
+  /* 메시지 */
+  .confirm__message {
+    margin: 12px 0 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #4b5563;
+  }
+  
+  /* 버튼 영역 */
+  .confirm__actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+  
+    padding: 16px 24px 24px;
+  }
+  
+  /* 버튼 공통 */
+  .confirm__button {
+    min-width: 72px;
+    height: 38px;
+  
+    padding: 0 14px;
+  
+    border: 0;
+    border-radius: 8px;
+  
+    font-size: 14px;
+    font-weight: 600;
+  
+    cursor: pointer;
+  }
+  
+  /* 취소 버튼 */
+  .confirm__button--cancel {
+    background: #f3f4f6;
+    color: #374151;
+  }
+  
+  /* 확인 버튼 */
+  .confirm__button--confirm {
+    background: #2563eb;
+    color: #fff;
+  }
+  
+  /* 위험 액션 버튼 */
+  .confirm__button--danger {
+    background: #dc2626;
+  }
+  
+  /* 버튼 hover */
+  .confirm__button:hover {
+    opacity: 0.9;
+  }
+  
+  /* 키보드 접근성 */
+  .confirm__button:focus-visible {
+    outline: 2px solid #111827;
+    outline-offset: 2px;
+  }

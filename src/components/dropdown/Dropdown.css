@@ -1,0 +1,185 @@
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown을 여는 버튼 */
+  .dropdown__trigger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  
+    min-height: 38px;
+    padding: 0 14px;
+  
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+  
+    background-color: #fff;
+    color: #111827;
+  
+    font-size: 14px;
+    font-weight: 600;
+  
+    cursor: pointer;
+  }
+  
+  .dropdown__trigger:hover {
+    background-color: #f9fafb;
+  }
+  
+  .dropdown__trigger:focus-visible {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+  }
+  
+  .dropdown__trigger:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  /* 메뉴 공통 */
+  .dropdown__menu {
+    position: absolute;
+    z-index: 1000;
+  
+    min-width: 180px;
+    padding: 6px;
+  
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+  
+    background-color: #fff;
+  
+    box-shadow:
+      0 12px 30px rgba(0, 0, 0, 0.12),
+      0 4px 10px rgba(0, 0, 0, 0.08);
+  
+    animation: dropdown-fade-in 0.16s ease-out;
+  }
+  
+  /**
+   * hidden 상태에서는 화면에서 제거합니다.
+   */
+  .dropdown__menu[hidden] {
+    display: none;
+  }
+  
+  /* 메뉴 위치 */
+  .dropdown__menu--bottom-left {
+    top: calc(100% + 6px);
+    left: 0;
+  }
+  
+  .dropdown__menu--bottom-right {
+    top: calc(100% + 6px);
+    right: 0;
+  }
+  
+  .dropdown__menu--top-left {
+    bottom: calc(100% + 6px);
+    left: 0;
+  }
+  
+  .dropdown__menu--top-right {
+    right: 0;
+    bottom: calc(100% + 6px);
+  }
+  
+  /* 메뉴 아이템 */
+  .dropdown__item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  
+    width: 100%;
+    min-height: 36px;
+    padding: 0 10px;
+  
+    border: 0;
+    border-radius: 7px;
+  
+    background-color: transparent;
+    color: #111827;
+  
+    font-size: 14px;
+    text-align: left;
+  
+    cursor: pointer;
+  }
+  
+  .dropdown__item:hover {
+    background-color: #f3f4f6;
+  }
+  
+  .dropdown__item:focus-visible {
+    outline: 2px solid #2563eb;
+    outline-offset: -2px;
+  }
+  
+  .dropdown__item:disabled {
+    color: #9ca3af;
+    cursor: not-allowed;
+  }
+  
+  .dropdown__item:disabled:hover {
+    background-color: transparent;
+  }
+  
+  .dropdown__item-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  
+    flex: 0 0 auto;
+  
+    width: 18px;
+  
+    color: #6b7280;
+  }
+  
+  .dropdown__item-label {
+    flex: 1;
+  }
+  
+  .dropdown__item-suffix {
+    flex: 0 0 auto;
+  
+    color: #9ca3af;
+    font-size: 12px;
+  }
+  
+  .dropdown__separator {
+    height: 1px;
+    margin: 6px 4px;
+  
+    background-color: #e5e7eb;
+  }
+  
+  .dropdown__label {
+    padding: 8px 10px 6px;
+  
+    color: #6b7280;
+  
+    font-size: 12px;
+    font-weight: 700;
+  }
+  
+  @keyframes dropdown-fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(-4px) scale(0.98);
+    }
+  
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .dropdown__menu {
+      animation: none;
+    }
+  }

@@ -1,0 +1,129 @@
+.number-input-field {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  
+  .number-input-field--full {
+    width: 100%;
+  }
+  
+  .number-input-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #111827;
+  }
+  
+  .number-input-wrapper {
+    position: relative;
+  
+    display: flex;
+    align-items: center;
+  
+    width: 100%;
+  }
+  
+  .number-input {
+    width: 100%;
+    height: 44px;
+  
+    padding: 0 14px;
+  
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+  
+    outline: none;
+  
+    background: #fff;
+    color: #111827;
+  
+    font-size: 14px;
+  
+    box-sizing: border-box;
+  
+    transition:
+      border-color 0.2s,
+      box-shadow 0.2s,
+      background-color 0.2s;
+  }
+  
+  .number-input::placeholder {
+    color: #9ca3af;
+  }
+  
+  .number-input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+  }
+  
+  .number-input-wrapper--error .number-input {
+    border-color: #dc2626;
+  }
+  
+  .number-input-wrapper--error .number-input:focus {
+    border-color: #dc2626;
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.15);
+  }
+  
+  .number-input-wrapper--disabled .number-input {
+    cursor: not-allowed;
+    background: #f9fafb;
+    opacity: 0.6;
+  }
+  
+  .number-input-wrapper--readonly .number-input {
+    background: #f9fafb;
+  }
+  
+  .number-input-clear {
+    position: absolute;
+  
+    top: 50%;
+    right: 12px;
+  
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  
+    width: 22px;
+    height: 22px;
+  
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+  
+    background: transparent;
+    color: #6b7280;
+  
+    font-size: 18px;
+    line-height: 1;
+  
+    cursor: pointer;
+  
+    transform: translateY(-50%);
+  }
+  
+  .number-input-clear:hover {
+    background: #f3f4f6;
+    color: #111827;
+  }
+  
+  .number-input-clear:disabled {
+    cursor: not-allowed;
+  }
+  
+  .number-input-helper {
+    margin: 0;
+  
+    font-size: 12px;
+    line-height: 1.4;
+    color: #6b7280;
+  }
+  
+  .number-input-error {
+    margin: 0;
+  
+    font-size: 12px;
+    line-height: 1.4;
+    color: #dc2626;
+  }

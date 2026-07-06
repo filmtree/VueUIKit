@@ -1,0 +1,139 @@
+.loading {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  
+    color: #374151;
+  }
+  
+  /* inline 모드는 버튼 내부나 텍스트 옆에서 사용합니다. */
+  .loading--inline {
+    display: inline-flex;
+    vertical-align: middle;
+  }
+  
+  /* center 모드는 부모 영역 안에서 가운데 정렬합니다. */
+  .loading--center {
+    display: flex;
+    width: 100%;
+    min-height: 160px;
+  }
+  
+  /* overlay 모드는 부모 영역을 덮습니다.
+     이 모드를 쓰는 부모 요소에는 position: relative가 필요합니다. */
+  .loading--overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+  
+    display: flex;
+  
+    background-color: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(2px);
+  }
+  
+  /* fullscreen 모드는 브라우저 화면 전체를 덮습니다. */
+  .loading--fullscreen {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+  
+    display: flex;
+  
+    background-color: rgba(255, 255, 255, 0.86);
+    backdrop-filter: blur(2px);
+  }
+  
+  /* 크기별 CSS 변수 */
+  .loading--sm {
+    --loading-size: 16px;
+    --loading-border: 2px;
+    --loading-font-size: 13px;
+  }
+  
+  .loading--md {
+    --loading-size: 28px;
+    --loading-border: 3px;
+    --loading-font-size: 14px;
+  }
+  
+  .loading--lg {
+    --loading-size: 44px;
+    --loading-border: 4px;
+    --loading-font-size: 16px;
+  }
+  
+  /* spinner 타입 */
+  .loading__spinner {
+    width: var(--loading-size);
+    height: var(--loading-size);
+  
+    border: var(--loading-border) solid #e5e7eb;
+    border-top-color: #2563eb;
+    border-radius: 9999px;
+  
+    animation: loading-spin 0.8s linear infinite;
+  }
+  
+  /* dots 타입 */
+  .loading__dots {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .loading__dots span {
+    width: calc(var(--loading-size) / 4);
+    height: calc(var(--loading-size) / 4);
+  
+    border-radius: 9999px;
+  
+    background-color: #2563eb;
+  
+    animation: loading-dot 0.9s ease-in-out infinite;
+  }
+  
+  .loading__dots span:nth-child(2) {
+    animation-delay: 0.12s;
+  }
+  
+  .loading__dots span:nth-child(3) {
+    animation-delay: 0.24s;
+  }
+  
+  /* 로딩 텍스트 */
+  .loading__label {
+    font-size: var(--loading-font-size);
+    font-weight: 500;
+    line-height: 1.4;
+    color: currentColor;
+  }
+  
+  @keyframes loading-spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes loading-dot {
+    0%,
+    80%,
+    100% {
+      opacity: 0.35;
+      transform: translateY(0);
+    }
+  
+    40% {
+      opacity: 1;
+      transform: translateY(-4px);
+    }
+  }
+  
+  /* 사용자가 모션 감소 설정을 켜둔 경우 애니메이션을 최소화합니다. */
+  @media (prefers-reduced-motion: reduce) {
+    .loading__spinner,
+    .loading__dots span {
+      animation-duration: 1.8s;
+    }
+  }

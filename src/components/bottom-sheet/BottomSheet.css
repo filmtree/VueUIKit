@@ -1,0 +1,215 @@
+.bottom-sheet {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+  
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  
+    pointer-events: none;
+  }
+  
+  /* dim 배경 */
+  .bottom-sheet__dim {
+    position: absolute;
+    inset: 0;
+  
+    background: rgba(0, 0, 0, 0.45);
+  
+    opacity: 0;
+    transition: opacity 0.25s ease;
+  }
+  
+  /* 실제 바텀시트 패널 */
+  .bottom-sheet__panel {
+    position: relative;
+    z-index: 1;
+  
+    width: 100%;
+    max-width: 640px;
+  
+    background: #ffffff;
+    color: #111827;
+  
+    border-radius: 20px 20px 0 0;
+  
+    box-shadow: 0 -16px 40px rgba(0, 0, 0, 0.18);
+  
+    transform: translateY(100%);
+    transition: transform 0.28s ease;
+  
+    pointer-events: auto;
+  
+    overflow: hidden;
+  
+    outline: none;
+  }
+  
+  /* 열림 상태 */
+  .bottom-sheet--open {
+    pointer-events: auto;
+  }
+  
+  .bottom-sheet--open .bottom-sheet__dim {
+    opacity: 1;
+  }
+  
+  .bottom-sheet--open .bottom-sheet__panel {
+    transform: translateY(0);
+  }
+  
+  /* 닫힘 상태 */
+  .bottom-sheet--close .bottom-sheet__dim {
+    opacity: 0;
+  }
+  
+  .bottom-sheet--close .bottom-sheet__panel {
+    transform: translateY(100%);
+  }
+  
+  /* =========================
+     size
+  ========================= */
+  
+  .bottom-sheet--auto .bottom-sheet__panel {
+    max-height: calc(100dvh - 48px);
+  }
+  
+  .bottom-sheet--sm .bottom-sheet__panel {
+    height: 280px;
+  }
+  
+  .bottom-sheet--md .bottom-sheet__panel {
+    height: 480px;
+  }
+  
+  .bottom-sheet--lg .bottom-sheet__panel {
+    height: 70dvh;
+  }
+  
+  .bottom-sheet--full .bottom-sheet__panel {
+    height: calc(100dvh - 24px);
+  }
+  
+  /* =========================
+     handle
+  ========================= */
+  
+  .bottom-sheet__handle-wrap {
+    display: flex;
+    justify-content: center;
+  
+    padding: 10px 0 6px;
+  }
+  
+  .bottom-sheet__handle {
+    width: 36px;
+    height: 4px;
+  
+    border-radius: 999px;
+    background: #d1d5db;
+  }
+  
+  /* =========================
+     header
+  ========================= */
+  
+  .bottom-sheet__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  
+    padding: 12px 20px 8px;
+  }
+  
+  .bottom-sheet__title {
+    margin: 0;
+  
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.4;
+  
+    color: #111827;
+  }
+  
+  .bottom-sheet__close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  
+    flex: 0 0 auto;
+  
+    width: 32px;
+    height: 32px;
+  
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+  
+    background: transparent;
+    color: #6b7280;
+  
+    font-size: 24px;
+    line-height: 1;
+  
+    cursor: pointer;
+  }
+  
+  .bottom-sheet__close:hover {
+    background: #f3f4f6;
+    color: #111827;
+  }
+  
+  .bottom-sheet__close:focus-visible {
+    outline: 2px solid #111827;
+    outline-offset: 2px;
+  }
+  
+  /* =========================
+     body
+  ========================= */
+  
+  .bottom-sheet__body {
+    padding: 16px 20px 20px;
+  
+    overflow-y: auto;
+  
+    /*
+      header/footer가 있는 경우에도 내부 스크롤이 자연스럽게 동작하도록 처리합니다.
+    */
+    max-height: inherit;
+  
+    box-sizing: border-box;
+  }
+  
+  /* =========================
+     footer
+  ========================= */
+  
+  .bottom-sheet__footer {
+    display: flex;
+    gap: 8px;
+  
+    padding: 12px 20px calc(12px + env(safe-area-inset-bottom));
+  
+    border-top: 1px solid #e5e7eb;
+  
+    background: #ffffff;
+  }
+  
+  /* footer 안의 버튼을 동일 너비로 쓰기 쉽게 처리합니다. */
+  .bottom-sheet__footer > * {
+    flex: 1 1 0;
+  }
+  
+  /* =========================
+     mobile
+  ========================= */
+  
+  @media (max-width: 640px) {
+    .bottom-sheet__panel {
+      max-width: none;
+    }
+  }

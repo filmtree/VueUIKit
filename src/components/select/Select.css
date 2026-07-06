@@ -1,0 +1,114 @@
+.select-field {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  
+  .select-field--full {
+    width: 100%;
+  }
+  
+  .select-field__label {
+    display: inline-flex;
+    gap: 4px;
+  
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  .select-field__required {
+    color: #dc2626;
+  }
+  
+  .select-wrapper {
+    position: relative;
+  }
+  
+  .select {
+    width: 100%;
+  
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+  
+    background: #fff;
+  
+    appearance: none;
+  
+    outline: none;
+  
+    transition:
+      border-color 0.2s,
+      box-shadow 0.2s;
+  }
+  
+  .select:focus {
+    border-color: #2563eb;
+  
+    box-shadow:
+      0 0 0 3px
+      rgba(37, 99, 235, 0.15);
+  }
+  
+  .select--sm {
+    height: 36px;
+    padding: 0 36px 0 12px;
+  }
+  
+  .select--md {
+    height: 44px;
+    padding: 0 40px 0 14px;
+  }
+  
+  .select--lg {
+    height: 52px;
+    padding: 0 44px 0 16px;
+  }
+  
+  .select--full {
+    width: 100%;
+  }
+  
+  .select--error {
+    border-color: #dc2626;
+  }
+  
+  .select--success {
+    border-color: #16a34a;
+  }
+  
+  .select:disabled {
+    background: #f9fafb;
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  .select-arrow {
+    position: absolute;
+  
+    top: 50%;
+    right: 14px;
+  
+    transform: translateY(-50%);
+  
+    pointer-events: none;
+  
+    font-size: 12px;
+  }
+  
+  .select-field__message {
+    margin: 0;
+  
+    font-size: 12px;
+  }
+  
+  .select-field__message--helper {
+    color: #6b7280;
+  }
+  
+  .select-field__message--error {
+    color: #dc2626;
+  }
+  
+  .select-field__message--success {
+    color: #16a34a;
+  }

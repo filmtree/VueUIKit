@@ -1,0 +1,321 @@
+.range-slider {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* =========================
+     header
+  ========================= */
+  
+  .range-slider__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  
+    margin-bottom: 8px;
+  }
+  
+  .range-slider__label {
+    font-size: 14px;
+    font-weight: 700;
+    color: #111827;
+  }
+  
+  .range-slider__value {
+    flex: 0 0 auto;
+  
+    font-size: 14px;
+    font-weight: 700;
+    color: #2563eb;
+  }
+  
+  .range-slider__description {
+    margin: 0 0 10px;
+  
+    font-size: 13px;
+    line-height: 1.5;
+    color: #6b7280;
+  }
+  
+  /* =========================
+     single range
+  ========================= */
+  
+  .range-slider__control {
+    position: relative;
+  
+    width: 100%;
+    height: 32px;
+  }
+  
+  /*
+    단일 RangeSlider의 input입니다.
+    background에 linear-gradient를 사용해서
+    왼쪽 채움 영역을 표현합니다.
+  */
+  .range-slider__input {
+    width: 100%;
+    height: 32px;
+  
+    margin: 0;
+  
+    appearance: none;
+    -webkit-appearance: none;
+  
+    background: linear-gradient(
+      to right,
+      #2563eb 0%,
+      #2563eb var(--range-percent),
+      #e5e7eb var(--range-percent),
+      #e5e7eb 100%
+    );
+  
+    border-radius: 999px;
+    cursor: pointer;
+  }
+  
+  /* Chrome, Safari thumb */
+  .range-slider__input::-webkit-slider-thumb {
+    width: 18px;
+    height: 18px;
+  
+    appearance: none;
+    -webkit-appearance: none;
+  
+    border: 3px solid #2563eb;
+    border-radius: 50%;
+  
+    background: #ffffff;
+  
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  
+    cursor: pointer;
+  }
+  
+  /* Firefox track */
+  .range-slider__input::-moz-range-track {
+    height: 8px;
+  
+    border: 0;
+    border-radius: 999px;
+  
+    background: transparent;
+  }
+  
+  /* Firefox thumb */
+  .range-slider__input::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+  
+    border: 3px solid #2563eb;
+    border-radius: 50%;
+  
+    background: #ffffff;
+  
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  
+    cursor: pointer;
+  }
+  
+  .range-slider__input:focus-visible {
+    outline: 2px solid #2563eb;
+    outline-offset: 4px;
+  }
+  
+  /* =========================
+     multi range
+  ========================= */
+  
+  .multi-range-slider__control {
+    position: relative;
+  
+    width: 100%;
+    height: 32px;
+  }
+  
+  /* 기본 track */
+  .multi-range-slider__track {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+  
+    height: 8px;
+  
+    border-radius: 999px;
+  
+    background: #e5e7eb;
+  
+    transform: translateY(-50%);
+  }
+  
+  /* 선택된 범위 */
+  .multi-range-slider__range {
+    position: absolute;
+    top: 50%;
+    left: var(--range-left);
+    right: var(--range-right);
+  
+    height: 8px;
+  
+    border-radius: 999px;
+  
+    background: #2563eb;
+  
+    transform: translateY(-50%);
+  }
+  
+  /*
+    두 개의 range input을 같은 위치에 겹칩니다.
+    실제 track은 위의 div로 그리고,
+    input 자체의 배경은 투명하게 둡니다.
+  */
+  .multi-range-slider__input {
+    position: absolute;
+    top: 0;
+    left: 0;
+  
+    width: 100%;
+    height: 32px;
+  
+    margin: 0;
+  
+    appearance: none;
+    -webkit-appearance: none;
+  
+    background: transparent;
+  
+    pointer-events: none;
+  }
+  
+  /*
+    thumb만 pointer 이벤트를 받게 합니다.
+    이렇게 해야 두 input이 겹쳐 있어도 핸들 조작이 가능합니다.
+  */
+  .multi-range-slider__input::-webkit-slider-thumb {
+    width: 18px;
+    height: 18px;
+  
+    appearance: none;
+    -webkit-appearance: none;
+  
+    border: 3px solid #2563eb;
+    border-radius: 50%;
+  
+    background: #ffffff;
+  
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  
+    cursor: pointer;
+    pointer-events: auto;
+  }
+  
+  .multi-range-slider__input::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+  
+    border: 3px solid #2563eb;
+    border-radius: 50%;
+  
+    background: #ffffff;
+  
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  
+    cursor: pointer;
+    pointer-events: auto;
+  }
+  
+  .multi-range-slider__input::-moz-range-track {
+    background: transparent;
+    border: 0;
+  }
+  
+  /*
+    핸들이 겹칠 때 클릭 우선순위를 조절하기 위한 z-index입니다.
+  */
+  .multi-range-slider__input--left {
+    z-index: 2;
+  }
+  
+  .multi-range-slider__input--right {
+    z-index: 3;
+  }
+  
+  .multi-range-slider__input:focus-visible {
+    outline: none;
+  }
+  
+  .multi-range-slider__input:focus-visible::-webkit-slider-thumb {
+    outline: 2px solid #2563eb;
+    outline-offset: 3px;
+  }
+  
+  .multi-range-slider__input:focus-visible::-moz-range-thumb {
+    outline: 2px solid #2563eb;
+    outline-offset: 3px;
+  }
+  
+  /* =========================
+     min max
+  ========================= */
+  
+  .range-slider__minmax {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+  
+    margin-top: 4px;
+  
+    font-size: 12px;
+    color: #6b7280;
+  }
+  
+  /* =========================
+     error / disabled
+  ========================= */
+  
+  .range-slider__error {
+    margin: 8px 0 0;
+  
+    font-size: 13px;
+    line-height: 1.5;
+    color: #dc2626;
+  }
+  
+  .range-slider--error .range-slider__input {
+    background: linear-gradient(
+      to right,
+      #dc2626 0%,
+      #dc2626 var(--range-percent),
+      #fee2e2 var(--range-percent),
+      #fee2e2 100%
+    );
+  }
+  
+  .range-slider--error .multi-range-slider__range {
+    background: #dc2626;
+  }
+  
+  .range-slider--error .multi-range-slider__track {
+    background: #fee2e2;
+  }
+  
+  .range-slider--disabled {
+    opacity: 0.55;
+  }
+  
+  .range-slider--disabled .range-slider__input,
+  .range-slider--disabled .multi-range-slider__input {
+    cursor: not-allowed;
+  }
+  
+  .range-slider--disabled .range-slider__input::-webkit-slider-thumb,
+  .range-slider--disabled .multi-range-slider__input::-webkit-slider-thumb {
+    cursor: not-allowed;
+  }
+  
+  .range-slider--disabled .range-slider__input::-moz-range-thumb,
+  .range-slider--disabled .multi-range-slider__input::-moz-range-thumb {
+    cursor: not-allowed;
+  }

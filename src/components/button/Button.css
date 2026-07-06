@@ -1,0 +1,157 @@
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  
+    border: none;
+    border-radius: 8px;
+  
+    cursor: pointer;
+  
+    font-size: 14px;
+    font-weight: 500;
+  
+    transition:
+      background-color 0.2s,
+      color 0.2s,
+      border-color 0.2s,
+      opacity 0.2s;
+  }
+  
+  /* =========================
+     size
+  ========================= */
+  
+  .btn--sm {
+    height: 32px;
+    padding: 0 12px;
+    font-size: 13px;
+  }
+  
+  .btn--md {
+    height: 40px;
+    padding: 0 16px;
+    font-size: 14px;
+  }
+  
+  .btn--lg {
+    height: 48px;
+    padding: 0 20px;
+    font-size: 15px;
+  }
+  
+  /* =========================
+     variant
+  ========================= */
+  
+  .btn--primary {
+    background: #2563eb;
+    color: #ffffff;
+  }
+  
+  .btn--primary:hover:not(:disabled) {
+    background: #1d4ed8;
+  }
+  
+  .btn--secondary {
+    background: #e5e7eb;
+    color: #111827;
+  }
+  
+  .btn--secondary:hover:not(:disabled) {
+    background: #d1d5db;
+  }
+  
+  .btn--outline {
+    border: 1px solid #d1d5db;
+    background: transparent;
+    color: #111827;
+  }
+  
+  .btn--outline:hover:not(:disabled) {
+    background: #f3f4f6;
+  }
+  
+  .btn--danger {
+    background: #dc2626;
+    color: #ffffff;
+  }
+  
+  .btn--danger:hover:not(:disabled) {
+    background: #b91c1c;
+  }
+  
+  /* =========================
+     icon
+  ========================= */
+  
+  .btn__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  
+    flex-shrink: 0;
+  
+    line-height: 0;
+  }
+  
+  .btn__icon svg {
+    display: block;
+  }
+  
+  /* =========================
+     label
+  ========================= */
+  
+  .btn__label {
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  /* =========================
+     full width
+  ========================= */
+  
+  .btn--full {
+    width: 100%;
+  }
+  
+  /* =========================
+     icon only
+  ========================= */
+  
+  .btn--icon-only {
+    width: 40px;
+    padding: 0;
+  }
+  
+  .btn--sm.btn--icon-only {
+    width: 32px;
+  }
+  
+  .btn--lg.btn--icon-only {
+    width: 48px;
+  }
+  
+  /* =========================
+     loading / disabled
+  ========================= */
+  
+  .btn--loading {
+    cursor: progress;
+  }
+  
+  .btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  /* =========================
+     focus
+  ========================= */
+  
+  .btn:focus-visible {
+    outline: 2px solid #111827;
+    outline-offset: 2px;
+  }

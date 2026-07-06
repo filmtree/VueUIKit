@@ -1,0 +1,208 @@
+/* 기본 카드 */
+.card {
+    width: 100%;
+    box-sizing: border-box;
+  
+    background: #ffffff;
+    color: #111827;
+  
+    transition:
+      border-color 0.2s ease,
+      box-shadow 0.2s ease,
+      transform 0.2s ease,
+      background-color 0.2s ease;
+  }
+  
+  /* 카드 스타일 종류 */
+  .card--default {
+    border: 1px solid #e5e7eb;
+  }
+  
+  .card--outlined {
+    border: 1px solid #d1d5db;
+  }
+  
+  .card--elevated {
+    border: 1px solid transparent;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  }
+  
+  /* padding 옵션 */
+  .card--padding-none {
+    padding: 0;
+  }
+  
+  .card--padding-sm {
+    padding: 12px;
+  }
+  
+  .card--padding-md {
+    padding: 16px;
+  }
+  
+  .card--padding-lg {
+    padding: 24px;
+  }
+  
+  /* radius 옵션 */
+  .card--radius-none {
+    border-radius: 0;
+  }
+  
+  .card--radius-sm {
+    border-radius: 6px;
+  }
+  
+  .card--radius-md {
+    border-radius: 12px;
+  }
+  
+  .card--radius-lg {
+    border-radius: 20px;
+  }
+  
+  /* 클릭 가능한 카드 */
+  .card--clickable {
+    cursor: pointer;
+  }
+  
+  .card--clickable:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* 선택된 카드 */
+  .card--selected {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+  }
+  
+  /* 비활성화 카드 */
+  .card--disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: auto;
+  }
+  
+  /* Header */
+  .card__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  
+  .card__header-content {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+  
+  .card__header-extra {
+    flex: 0 0 auto;
+  }
+  
+  /* Body */
+  .card__body {
+    margin-top: 12px;
+  }
+  
+  /* Footer */
+  .card__footer {
+    display: flex;
+    gap: 8px;
+    margin-top: 16px;
+  }
+  
+  .card__footer--left {
+    justify-content: flex-start;
+  }
+  
+  .card__footer--center {
+    justify-content: center;
+  }
+  
+  .card__footer--right {
+    justify-content: flex-end;
+  }
+  
+  .card__footer--between {
+    justify-content: space-between;
+  }
+  
+  /* Title */
+  .card__title {
+    margin: 0;
+  
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.35;
+  
+    color: #111827;
+  }
+  
+  /* Description */
+  .card__description {
+    margin: 6px 0 0;
+  
+    font-size: 14px;
+    line-height: 1.5;
+  
+    color: #6b7280;
+  }
+  
+  /* Media */
+  .card__media {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  
+    background: #f3f4f6;
+    border-radius: 10px;
+  }
+  
+  /* 1:1 비율 */
+  .card__media--square {
+    aspect-ratio: 1 / 1;
+  }
+  
+  /* 일반 카드 썸네일 비율 */
+  .card__media--wide {
+    aspect-ratio: 4 / 3;
+  }
+  
+  /* 영상 썸네일 비율 */
+  .card__media--video {
+    aspect-ratio: 16 / 9;
+  }
+  
+  /* 이미지 원본 비율 */
+  .card__media--auto {
+    aspect-ratio: auto;
+  }
+  
+  /* 이미지 */
+  .card__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .card__image--cover {
+    object-fit: cover;
+  }
+  
+  .card__image--contain {
+    object-fit: contain;
+  }
+  
+  /* fallback */
+  .card__media-fallback {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    min-height: 160px;
+  
+    font-size: 14px;
+    color: #9ca3af;
+  }

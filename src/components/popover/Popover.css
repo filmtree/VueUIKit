@@ -1,0 +1,143 @@
+.popover-trigger {
+    display: inline-flex;
+    vertical-align: middle;
+  }
+  
+  /*
+    trigger 슬롯 안에는 보통 button이 들어갑니다.
+    실제 포커스 스타일은 slot 내부의 button에서 처리하는 것이 자연스럽습니다.
+   */
+  .popover-trigger:focus {
+    outline: none;
+  }
+  
+  .popover {
+    position: fixed;
+    z-index: 9999;
+  
+    padding: 12px;
+  
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+  
+    background-color: #ffffff;
+    color: #111827;
+  
+    box-shadow:
+      0 12px 32px rgba(0, 0, 0, 0.12),
+      0 4px 12px rgba(0, 0, 0, 0.08);
+  
+    box-sizing: border-box;
+  
+    animation: popover-fade-in 0.14s ease-out;
+  }
+  
+  /* 작은 크기 */
+  .popover--sm {
+    width: 200px;
+  }
+  
+  /* 기본 크기 */
+  .popover--md {
+    width: 280px;
+  }
+  
+  /* 큰 크기 */
+  .popover--lg {
+    width: 360px;
+  }
+  
+  /* 콘텐츠 크기에 맞춤 */
+  .popover--auto {
+    width: max-content;
+    max-width: calc(100vw - 16px);
+  }
+  
+  /* 화살표 기본 스타일 */
+  .popover__arrow {
+    position: absolute;
+  
+    width: 10px;
+    height: 10px;
+  
+    background-color: #ffffff;
+  
+    border-left: 1px solid #e5e7eb;
+    border-top: 1px solid #e5e7eb;
+  
+    transform: rotate(45deg);
+  }
+  
+  /*
+    Popover가 위쪽에 뜨는 경우
+    화살표는 아래쪽에 위치합니다.
+   */
+  .popover--top .popover__arrow,
+  .popover--top-start .popover__arrow,
+  .popover--top-end .popover__arrow {
+    bottom: -6px;
+  }
+  
+  /*
+    Popover가 아래쪽에 뜨는 경우
+    화살표는 위쪽에 위치합니다.
+   */
+  .popover--bottom .popover__arrow,
+  .popover--bottom-start .popover__arrow,
+  .popover--bottom-end .popover__arrow {
+    top: -6px;
+  }
+  
+  /*
+    Popover가 왼쪽에 뜨는 경우
+    화살표는 오른쪽에 위치합니다.
+   */
+  .popover--left .popover__arrow {
+    right: -6px;
+  }
+  
+  /*
+    Popover가 오른쪽에 뜨는 경우
+    화살표는 왼쪽에 위치합니다.
+   */
+  .popover--right .popover__arrow {
+    left: -6px;
+  }
+  
+  /* 가운데 정렬 화살표 */
+  .popover--top .popover__arrow,
+  .popover--bottom .popover__arrow {
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+  }
+  
+  /* start 정렬 화살표 */
+  .popover--top-start .popover__arrow,
+  .popover--bottom-start .popover__arrow {
+    left: 16px;
+  }
+  
+  /* end 정렬 화살표 */
+  .popover--top-end .popover__arrow,
+  .popover--bottom-end .popover__arrow {
+    right: 16px;
+  }
+  
+  /* left / right 중앙 화살표 */
+  .popover--left .popover__arrow,
+  .popover--right .popover__arrow {
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+  }
+  
+  @keyframes popover-fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(-2px) scale(0.98);
+    }
+  
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }

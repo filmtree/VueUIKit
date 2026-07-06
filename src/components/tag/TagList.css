@@ -1,0 +1,25 @@
+.tag-list {
+    display: flex;
+    align-items: center;
+  }
+  
+  .tag-list--wrap {
+    flex-wrap: wrap;
+  }
+  
+  .tag-list--nowrap {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+  
+  .tag-list--gap-sm {
+    gap: 4px;
+  }
+  
+  .tag-list--gap-md {
+    gap: 8px;
+  }
+  
+  .tag-list--gap-lg {
+    gap: 12px;
+  }

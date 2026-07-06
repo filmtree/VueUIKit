@@ -1,0 +1,217 @@
+.badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+  
+    max-width: 100%;
+    box-sizing: border-box;
+  
+    border: 1px solid transparent;
+  
+    font-weight: 600;
+    line-height: 1;
+    white-space: nowrap;
+    vertical-align: middle;
+  
+    transition:
+      background-color 0.2s ease,
+      border-color 0.2s ease,
+      color 0.2s ease,
+      opacity 0.2s ease;
+  }
+  
+  /* =========================
+     size
+  ========================= */
+  
+  .badge--xs {
+    min-height: 18px;
+    padding: 0 6px;
+    font-size: 11px;
+  }
+  
+  .badge--sm {
+    min-height: 22px;
+    padding: 0 8px;
+    font-size: 12px;
+  }
+  
+  .badge--md {
+    min-height: 26px;
+    padding: 0 10px;
+    font-size: 13px;
+  }
+  
+  .badge--lg {
+    min-height: 30px;
+    padding: 0 12px;
+    font-size: 14px;
+  }
+  
+  /* =========================
+     shape
+  ========================= */
+  
+  .badge--rounded {
+    border-radius: 6px;
+  }
+  
+  .badge--pill {
+    border-radius: 999px;
+  }
+  
+  .badge--square {
+    border-radius: 3px;
+  }
+  
+  /* =========================
+     variant
+  ========================= */
+  
+  .badge--default {
+    color: #374151;
+    background: #f9fafb;
+    border-color: #e5e7eb;
+  }
+  
+  .badge--primary {
+    color: #1d4ed8;
+    background: #eff6ff;
+    border-color: #bfdbfe;
+  }
+  
+  .badge--success {
+    color: #047857;
+    background: #ecfdf5;
+    border-color: #a7f3d0;
+  }
+  
+  .badge--warning {
+    color: #b45309;
+    background: #fffbeb;
+    border-color: #fde68a;
+  }
+  
+  .badge--danger {
+    color: #b91c1c;
+    background: #fef2f2;
+    border-color: #fecaca;
+  }
+  
+  .badge--info {
+    color: #0369a1;
+    background: #f0f9ff;
+    border-color: #bae6fd;
+  }
+  
+  .badge--gray {
+    color: #4b5563;
+    background: #f3f4f6;
+    border-color: #e5e7eb;
+  }
+  
+  /* =========================
+     inner
+  ========================= */
+  
+  .badge__text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .badge__prefix,
+  .badge__suffix {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  
+    flex: 0 0 auto;
+    line-height: 1;
+  }
+  
+  /* =========================
+     removable
+  ========================= */
+  
+  .badge--removable {
+    padding-right: 4px;
+  }
+  
+  .badge__remove {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  
+    width: 18px;
+    height: 18px;
+  
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+  
+    background: transparent;
+    color: currentColor;
+  
+    font-size: 14px;
+    line-height: 1;
+  
+    cursor: pointer;
+  }
+  
+  .badge__remove:hover {
+    background: rgba(0, 0, 0, 0.08);
+  }
+  
+  .badge__remove:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 1px;
+  }
+  
+  /* =========================
+     dot
+  ========================= */
+  
+  .badge--dot {
+    gap: 6px;
+  }
+  
+  .badge__dot {
+    flex: 0 0 auto;
+  
+    width: 7px;
+    height: 7px;
+  
+    border-radius: 50%;
+    background: currentColor;
+  }
+  
+  /* dot만 단독으로 사용할 때 */
+  .badge--dot:not(:has(.badge__text)) {
+    width: 8px;
+    height: 8px;
+    min-height: 8px;
+    padding: 0;
+    border-radius: 50%;
+  }
+  
+  /* =========================
+     clickable / disabled
+  ========================= */
+  
+  .badge--clickable {
+    cursor: pointer;
+  }
+  
+  .badge--clickable:hover {
+    opacity: 0.85;
+  }
+  
+  .badge--disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  .badge--disabled .badge__remove {
+    cursor: not-allowed;
+  }

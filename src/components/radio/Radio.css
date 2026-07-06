@@ -1,0 +1,131 @@
+.radio {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  
+    cursor: pointer;
+    color: #111827;
+  }
+  
+  .radio input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  .radio__circle {
+    position: relative;
+  
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  
+    width: 18px;
+    height: 18px;
+  
+    border: 1px solid #d1d5db;
+    border-radius: 50%;
+  
+    background: #fff;
+  
+    transition:
+      border-color 0.2s,
+      box-shadow 0.2s;
+  }
+  
+  .radio__circle::after {
+    content: '';
+  
+    width: 8px;
+    height: 8px;
+  
+    border-radius: 50%;
+  
+    background: #2563eb;
+  
+    transform: scale(0);
+    transition: transform 0.15s;
+  }
+  
+  .radio input:checked + .radio__circle {
+    border-color: #2563eb;
+  }
+  
+  .radio input:checked + .radio__circle::after {
+    transform: scale(1);
+  }
+  
+  .radio input:focus-visible + .radio__circle {
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+  }
+  
+  .radio__label {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  
+  .radio--error .radio__circle {
+    border-color: #dc2626;
+  }
+  
+  .radio--disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  .radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  
+    margin: 0;
+    padding: 0;
+  
+    border: 0;
+  }
+  
+  .radio-group__legend {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  
+    margin-bottom: 4px;
+    padding: 0;
+  
+    font-size: 14px;
+    font-weight: 500;
+    color: #111827;
+  }
+  
+  .radio-group__required {
+    color: #dc2626;
+  }
+  
+  .radio-group__list {
+    display: flex;
+    gap: 12px;
+  }
+  
+  .radio-group--vertical .radio-group__list {
+    flex-direction: column;
+  }
+  
+  .radio-group--horizontal .radio-group__list {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .radio-group__message {
+    margin: 0;
+  
+    font-size: 12px;
+    line-height: 1.4;
+  }
+  
+  .radio-group__message--helper {
+    color: #6b7280;
+  }
+  
+  .radio-group__message--error {
+    color: #dc2626;
+  }
